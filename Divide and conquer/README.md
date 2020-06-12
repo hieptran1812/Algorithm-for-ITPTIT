@@ -77,3 +77,4 @@ https://leetcode.com/problems/kth-largest-element-in-an-array/
 2. [Wikipedia](https://vi.wikipedia.org/wiki/Wikipedia)
 3. [Giaithuatlaptrinh.com](https://www.giaithuatlaptrinh.com/?p=48)
 4. [Codeforces.com](https://codeforces.com/problemset?tags=divide%20and%20conquer)
+5. [Leetcode.com](https://leetcode.com/problemset/all/?topicSlugs=divide-and-conquer&difficulty=Medium)
