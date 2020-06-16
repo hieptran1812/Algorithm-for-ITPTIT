@@ -16,8 +16,11 @@ Việc hashing được thực hiện qua 2 bước:
 
 * Một phần tử sẽ được chuyển đổi thành 1 số nguyên bằng việc sử dụng hàm băm. Phần tử này được sử dụng như một chỉ mục để lưu trữ phần tử gốc và nó sẽ được đưa vào bảng băm.
 * Phần tử sẽ được lưu giữ trong bảng băm, nó có thể được truy xuất nhanh bằng khóa băm:
+
   hash = hashfunc(key)
+  
   index = hash % array_size
+  
 Theo cách trên thì việc băm sẽ phụ thuộc vào kích thước mảng array_size. Chỉ số index sau đó được đưa về [0; array_size-1] bằng việc sử dụng toán tử chia lấy dư %.
 
 Để thực hiện bước chuyển đổi như đã nêu ở phần Tổng quan, ta cần một hàm được gọi là Hash function. Mục tiêu là **chuyển chuỗi sang số nguyên**.
