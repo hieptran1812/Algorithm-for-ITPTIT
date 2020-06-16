@@ -30,10 +30,10 @@ Hàm băm là bất kỳ hàm nào có thể được sử dụng để ánh x�
 
 Một hàm băm được đánh giá tốt nếu nó đạt được các yêu cầu cơ bản sau:
 
-* Dễ tính toán: Nó phải dễ tính toán và bản thân nó không phải là một thuật toán
-* Phân bố đồng đều: Nó cần phải phân phối đồng đều trên bảng băm, không xảy ra việc tập trung thành các cụm
-* Ít va chạm: Va chạm xảy ra khi các cặp phần tử được ánh xạ tới cùng một giá trị băm
-Chú ý: Bất kể hàm băm có tốt đên đâu, va chạm vẫn có thể xảy ra. Vì vậy, để duy trì hiệu suất của bảng băm, điều quan trọng là phải quản lý va chạm thông qua các kỹ thuật giải quyết va chạm.
+* **Dễ tính toán**: Nó phải dễ tính toán và bản thân nó không phải là một thuật toán
+* **Phân bố đồng đều**: Nó cần phải phân phối đồng đều trên bảng băm, không xảy ra việc tập trung thành các cụm
+* **Ít va chạm**: Va chạm xảy ra khi các cặp phần tử được ánh xạ tới cùng một giá trị băm
+**Chú ý**: Bất kể hàm băm có tốt đên đâu, va chạm vẫn có thể xảy ra. Vì vậy, để duy trì hiệu suất của bảng băm, điều quan trọng là phải quản lý va chạm thông qua các kỹ thuật giải quyết va chạm.
 
 Tính toán hàm băm của một string:
 
