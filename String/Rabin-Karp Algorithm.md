@@ -11,6 +11,8 @@ Yêu cầu là ta phải tìm vị trí của xâu t trong xâu s, trong trườ
 
 Ý tưởng trung tâm của thuật toán là coi mỗi xâu là một số nguyên và phép toán so sánh hai xâu được đưa về phép toán so sánh các số nguyên (Sử dụng hàm băm).
 
+<p align = "center"><img src = "https://stackjava.com/wp-content/uploads/2017/11/rabin-karp-1.png"></p>
+
 ## Kĩ thuật
 
 ### Ý tưởng thuật toán
@@ -31,6 +33,8 @@ O(|s|) là độ phức tạp thời gian khi so sánh các string con của str
 Code ở [đây](https://ideone.com/zVDftg) nha :)))
 
 ## Ví dụ
+
+
 
 ## Ứng dụng
 
