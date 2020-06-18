@@ -52,27 +52,9 @@ Tớ sẽ trình bày những vấn đề và bài toán cơ bản, cốt lõi, 
 
 Gọi hàm *solve(x)* là số xu ít nhất cần để có tổng giá trị là x. Ta có các giá trị sau:
 
-*solve(0)* = 0
+*solve(0)* = 0 -> *solve(1)* = 1 -> *solve(2)* = 2 -> *solve(3)* = 1 -> *solve(4)* = 1 -> *solve(5)* = 2
 
-*solve(1)* = 1
-
-*solve(2)* = 2
-
-*solve(3)* = 1
-
-*solve(4)* = 1
-
-*solve(5)* = 2
-
-*solve(6)* = 2
-
-*solve(7)* = 2
-
-*solve(8)* = 2
-
-*solve(9)* = 3
-
-*solve(10)* = 3
+-> *solve(6)* = 2 -> *solve(7)* = 2 -> *solve(8)* = 2 -> *solve(9)* = 3 -> *solve(10)* = 3
 
 Ví dụ, *solve(10)* = 3 vì ta sẽ lấy 3 xu có giá trị lần lượt là 3, 3, 4 có 3 + 3 + 4 = 10. 
 
