@@ -40,7 +40,7 @@ Tớ sẽ trình bày những vấn đề và bài toán cơ bản, cốt lõi, 
 
 ### Coin problem
 
-**Đề bài**: Cho bạn các đồng xu có giá trị c<sub>1</sub>, c<sub>2</sub>,... , c<sub>k</sub>. Nhiệm vụ của bạn là lấy ít xu nhất có thể sao cho tổng giá trị của chung bằng tổng T cho trước.
+**Đề bài**: Cho bạn các đồng xu có giá trị c<sub>1</sub>, c<sub>2</sub>,... , c<sub>k</sub>. Nhiệm vụ của bạn là lấy ít xu nhất có thể sao cho tổng giá trị của chúng bằng tổng T cho trước.
 
 **Ý tưởng**: 
 * Ta có thể dùng thuật toán tham lam bằng cách chọn những đồng xu có giá trị lớn nhất lần lượt. Tuy nhiên, trong đa số trường hợp, thuật toán tham lam lại không cho ta được một kết quả tối ưu.
