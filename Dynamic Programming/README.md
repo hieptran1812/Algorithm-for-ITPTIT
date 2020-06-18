@@ -6,7 +6,7 @@ Các thuật toán đệ quy có ưu điểm dễ cài đặt, tuy nhiên do b�
 Với Quy hoạch động (Dynamic Programming) là một kĩ thuật nhằm đơn giản hóa việc tính toán các công thức truy hồi bằng cách lưu trữ toàn bộ hay một phần kết quả tính toán tại mỗi bước với mục đích sử dụng lại. 
 Quy hoạch động tương tự như đệ quy ở chỗ, việc tính toán các trường hợp cơ sở (trường hợp con) cho phép chúng ta xác định một cách tự nhiên giá trị cuối cùng. Cách tiếp cận từ dưới lên (Bottom - up) này hoạt động tốt khi giá trị mới chỉ phụ thuộc vào các giá trị được tính toán trước đó.
 
-Một tính chất quan trọng để giải quyết một vấn đề bằng Quy hoạch động là bạn phải nhìn ra được Công thức truy hồi trong bài toán đó.
+Một điều quan trọng rằng để giải quyết một vấn đề bằng Quy hoạch động là bạn phải nhìn ra được Công thức truy hồi trong bài toán đó.
 
 <p><img src = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/Dynamic-Programming-1-1024x512.png"></p>
 
