@@ -7,3 +7,4 @@ Lý thuyết về số học có lẽ là phần thú vị nhất trong toán h�
 1. [Các vấn đề cơ bản]()
 2. [Số học Modulo]()
 3. [Lý thuyết số học]()
+4. [Ứng dụng số học trong lý thuyết trò chơi]()
