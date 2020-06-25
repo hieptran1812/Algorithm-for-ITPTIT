@@ -3,7 +3,7 @@
 ## Tổng quan
 
 Thuật toán Dijkstra, mang tên của nhà khoa học máy tính người Hà Lan Edsger Dijkstra vào năm 1956 và ấn bản năm 1959, 
-là một thuật toán giải quyết bài toán đường đi ngắn nhất nguồn đơn trong một đồ thị có hướng không có cạnh mang trọng số âm. Thuật toán thường được sử dụng trong định tuyến với một chương trình con trong các thuật toán đồ thị hay trong công nghệ Hệ thống định vị toàn cầu (GPS).
+là một thuật toán giải quyết bài toán đường đi ngắn nhất nguồn đơn trong một đồ thị **có hướng không có cạnh mang trọng số âm**. Thuật toán thường được sử dụng trong định tuyến với một chương trình con trong các thuật toán đồ thị hay trong công nghệ Hệ thống định vị toàn cầu (GPS).
 
 Ví dụ: Chúng ta dùng các đỉnh của đồ thị để mô hình các thành phố và các cạnh để mô hình các đường nối giữa chúng. Khi đó trọng số các cạnh có thể xem như độ dài của các con đường (và do đó là không âm). Chúng ta cần di chuyển từ thành phố s đến thành phố t. Thuật toán Dijkstra sẽ giúp chỉ ra đường đi ngắn nhất chúng ta có thể đi.
 
@@ -113,22 +113,24 @@ void Dijkstra(Graph, source):
 #include <stdio.h>
 #include <vector>
 #include <queue>
+#include <algorithm>
 using namespace std;
 
 const int oo = 9999999; // danh dau la vo cuc
 typedef pair<int, int> ii;
-
-vector<ii> a[2309];
+int pre[1812];
+vector<int>path[1812]; //luu duong di toi dinh i
+vector<ii> a[1812];
 int n, m;
 
 int d[1812];
 
-void dijkstra() {
+void dijkstra(int source) {
     priority_queue<ii, vector<ii>, greater<ii>> pq; //Hang doi uu tien, gia tri first be hon len dau
     for (int i = 1; i <= n; i++)
         d[i] = oo; //gan gia tri d[i] bang vo cuc
-    d[1] = 0;
-    pq.push(ii(0, 1));
+    d[source] = 0;
+    pq.push(ii(0, source));
     while (pq.size()) {
         int u = pq.top().second;
         int du = pq.top().first;
@@ -140,6 +142,7 @@ void dijkstra() {
             int v = a[u][i].second;
             int uv = a[u][i].first;
             if (d[v] > du + uv) {
+            	pre[v] = u;
                 d[v] = du + uv;
                 pq.push(ii(d[v], v));
             }
@@ -148,36 +151,79 @@ void dijkstra() {
 }
 
 int main() {
-    int p, q, m, w;
+    int p, q, w, source;
+    //printf("Nhap dinh nguon: ");
+    scanf("%d", &source);
+    //printf("Nhap so dinh va so canh: ");
     scanf("%d%d", &n, &m);
     while (m--) {
         scanf("%d%d%d", &p, &q, &w);
         a[p].push_back(ii(w, q));
         a[q].push_back(ii(w, p));
     }
-    dijkstra();
-    for (int i = 1; i <= n; i++)
+    dijkstra(source);
+    for (int i = 1; i <= n; i++){
+    	if(i == source) continue;
+    	printf("=== Dinh %d\n", i);
+    	if(d[i] == oo ){
+    		printf("khong co duong di tu nguon toi dinh nay \n");
+    		continue;
+		}
         printf("d( 1 -> %d ) = %d\n", i, d[i]);
+        int tmp = i;
+        path[i].push_back(i);
+        while(tmp != source){
+        	if(pre[tmp] == source){
+        		path[i].push_back(source);
+        		break;
+			}
+        	else{
+				path[i].push_back(pre[tmp]);
+        		tmp = pre[tmp];
+        	}
+		}
+		printf("Duong di: ");
+		reverse(path[i].begin(),path[i].end());
+		for(int j = 0; j < path[i].size(); j++){
+			if(j == path[i].size()-1){
+				printf("%d", path[i][j]);
+				break;
+			} 
+			printf("%d -> ", path[i][j]);
+		}
+		printf("\n");
+    }
 }
 ```
 ### Độ phức tạp
 
 Độ phức tạp thời gian O(E.logV)
 
-### Ưu, nhược điểm
-
-
-
-
 ## Ví dụ
+
+Xem code ở trên nha :D
 
 ## Ứng dụng
 
+Một số ứng dụng của thuật toán Dijsktra
 
+1. Tìm đường đi ngắn nhất trên bản đồ.
+2. Ứng dụng trong mạng xã hội.
+3. Ứng dụng trong hệ thống thông tin di động
+4. Ứng dụng trong hàng không
+
+Bạn có thể tìm hiểu cụ thể hơn về từng ứng dụng tại [đây](https://medium.com/@farruk/practical-dijkstras-algorithm-b329ade79a1e) 
 
 ## Let's practice
 
-1.
+1. https://codeforces.com/problemset/problem/266/B
+2. https://codeforces.com/problemset/problem/3/A
+3. https://codeforces.com/problemset/problem/370/A
+4. https://codeforces.com/problemset/problem/1360/E
+5. https://codeforces.com/problemset/problem/520/B
+6. https://codeforces.com/problemset/problem/198/B
+7. https://codeforces.com/problemset/problem/1106/D
+8. https://codeforces.com/problemset/problem/329/B
 
 ## Tham khảo
 
