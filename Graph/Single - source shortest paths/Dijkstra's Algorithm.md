@@ -116,35 +116,35 @@ void Dijkstra(Graph, source):
 #include <algorithm>
 using namespace std;
 
-const int oo = 9999999; // danh dau la vo cuc
+const int oo = 9999999; // Đánh dấu là vô cực
 typedef pair<int, int> ii;
 int pre[1812];
-vector<int>path[1812]; //luu duong di toi dinh i
+vector<int>path[1812]; //Lưu đường đi tới đỉnh i
 vector<ii> a[1812];
 int n, m;
 
 int d[1812];
 
 void dijkstra(int source) {
-    priority_queue<ii, vector<ii>, greater<ii>> pq; //Hang doi uu tien, gia tri first be hon len dau
+    priority_queue<ii, vector<ii>, greater<ii>> pq; //Hàng đợi ưu tiên, giá trị second bé nhất cho lên đầu
     for (int i = 1; i <= n; i++)
         d[i] = oo; //gan gia tri d[i] bang vo cuc
     d[source] = 0;
     pq.push(ii(0, source));
     while (pq.size()) {
-        int u = pq.top().second;
-        int du = pq.top().first;
+        int u = pq.top().second; //Lấy giá trị second của phần tử đỉnh của pq
+        int du = pq.top().first; 
         pq.pop();
-        if (du != d[u]){ //Dieu kien de bo qua pair ma gia tri d[u] duoc cap nhat tu lan lap truoc
+        if (du != d[u]){ //Điều kiện để bỏ qua pair mà giá trị d[u] được cập nhật từ lần lặp trước.
         	continue;
-		}
-        for (int i = 0; i < a[u].size(); i++) {
+	}
+        for (int i = 0; i < a[u].size(); i++) { //Xét đỉnh kề đỉnh u
             int v = a[u][i].second;
             int uv = a[u][i].first;
-            if (d[v] > du + uv) {
-            	pre[v] = u;
-                d[v] = du + uv;
-                pq.push(ii(d[v], v));
+            if (d[v] > du + uv) { //Nếu tổng của đỉnh đang xét + trọng số của cạnh nối 2 đỉnh u và v nhỏ hơn thì cập nhật d[v] mới
+            	pre[v] = u; // Đỉnh trước v là đỉnh u
+                d[v] = du + uv; // Lấy giá trị nhỏ hơn
+                pq.push(ii(d[v], v)); // Thêm pair vào pq
             }
         }
     }
@@ -158,6 +158,7 @@ int main() {
     scanf("%d%d", &n, &m);
     while (m--) {
         scanf("%d%d%d", &p, &q, &w);
+	// Đồ thị vô hướng
         a[p].push_back(ii(w, q));
         a[q].push_back(ii(w, p));
     }
@@ -168,7 +169,7 @@ int main() {
     	if(d[i] == oo ){
     		printf("khong co duong di tu nguon toi dinh nay \n");
     		continue;
-		}
+	}
         printf("d( 1 -> %d ) = %d\n", i, d[i]);
         int tmp = i;
         path[i].push_back(i);
@@ -181,17 +182,17 @@ int main() {
 				path[i].push_back(pre[tmp]);
         		tmp = pre[tmp];
         	}
-		}
-		printf("Duong di: ");
-		reverse(path[i].begin(),path[i].end());
-		for(int j = 0; j < path[i].size(); j++){
-			if(j == path[i].size()-1){
-				printf("%d", path[i][j]);
-				break;
-			} 
-			printf("%d -> ", path[i][j]);
-		}
-		printf("\n");
+	}
+	printf("Duong di: ");
+	reverse(path[i].begin(),path[i].end());
+	for(int j = 0; j < path[i].size(); j++){
+		if(j == path[i].size()-1){
+			printf("%d", path[i][j]);
+			break;
+		} 
+		printf("%d -> ", path[i][j]);
+	}
+	printf("\n");
     }
 }
 ```
