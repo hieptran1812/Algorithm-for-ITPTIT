@@ -198,7 +198,7 @@ int main() {
 ```
 ### Độ phức tạp
 
-Độ phức tạp thời gian O(E.logV)
+Độ phức tạp thời gian O(|E|.log|V|)
 
 ## Ví dụ
 
