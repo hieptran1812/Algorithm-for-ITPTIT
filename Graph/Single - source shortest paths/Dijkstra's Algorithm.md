@@ -173,18 +173,12 @@ int main() {
         printf("d( 1 -> %d ) = %d\n", i, d[i]);
         int tmp = i;
         path[i].push_back(i);
-        while(tmp != source){
-        	if(pre[tmp] == source){
-        		path[i].push_back(source);
-        		break;
-			}
-        	else{
-				path[i].push_back(pre[tmp]);
-        		tmp = pre[tmp];
-        	}
+	for(int tmp = i; tmp != source; tmp = pre[tmp]){
+		path[i].push_back(tmp);
 	}
-	printf("Duong di: ");
+	path[i].push_back(source);
 	reverse(path[i].begin(),path[i].end());
+	printf("Duong di: ");
 	for(int j = 0; j < path[i].size(); j++){
 		if(j == path[i].size()-1){
 			printf("%d", path[i][j]);
@@ -194,6 +188,7 @@ int main() {
 	}
 	printf("\n");
     }
+    return 0;
 }
 ```
 ### Độ phức tạp
