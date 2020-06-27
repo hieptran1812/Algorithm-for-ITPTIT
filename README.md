@@ -7,9 +7,6 @@ các bạn thì
 
 Mọi ý kiến đóng góp xin gửi về email: hieptran22182000@gmail.com
 
-Hoặc các bạn có thể liên hệ với mình qua facebook: https://www.facebook.com/hieptran1812
-
-
 ## Giới thiệu
 
 ### Thuật toán là gì?
