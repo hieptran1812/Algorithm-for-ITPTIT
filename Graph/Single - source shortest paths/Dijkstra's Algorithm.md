@@ -86,6 +86,10 @@ Done!!! Vậy là tất cả các đỉnh đều đã được xét. Giờ kho�
 5. Nếu vẫn còn đỉnh chưa xét, lặp lại bước 2.
 ```
 
+### Chứng minh thuật toán
+
+Coming soon!
+
 ### Cài đặt
 
 **Mã giả**:
