@@ -111,6 +111,8 @@ Xem code trên :D
 
 ## Ứng dụng
 
+Thiết kế đường đi ngắn nhất giúp tiết kiệm nhiên liệu, thời gian, chi phí cho các hãng vận chuyển.
+
 ## Let's practice
 1. https://codeforces.com/problemset/problem/295/B
 2. https://codeforces.com/problemset/problem/339/C
