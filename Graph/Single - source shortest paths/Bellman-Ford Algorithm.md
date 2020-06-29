@@ -36,6 +36,10 @@ Với lần duyệt thứ 3, chỉ có cạnh (4, 5) cải tiến đường đi 
 													    
 Tới lần duyệt thứ 4, ta thấy không còn cạnh nào có thể tối ưu hóa bất kỳ đường đi ngắn nhất nào nữa. Tới đây, ta hoàn toàn có thể dừng duyệt (vì chắc chắn việc không còn cạnh có thể tối ưu cũng đồng nghĩa với việc không có chu trình âm trong đồ thị).
 
+### Chứng minh thuật toán
+
+Coming soon!
+
 ### Cài đặt
 
 **Mã giả**:
