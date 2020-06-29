@@ -11,13 +11,30 @@ Thuật toán Bellman-Ford là thuật toán dùng để tìm đường đi ng�
 
 Cho đồ thị như sau:
 
-<p align = "center><img src = "https://cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-1.png"></p>
+<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford1.png"></p>
                                                                                                                    
-Tìm đường đi ngắn nhất giữa đỉnh A với các đỉnh còn lại trong đồ thị.                                                                                                                  
+Tìm đường đi ngắn nhất giữa đỉnh 1 với các đỉnh còn lại trong đồ thị.                                                                                                             
 
 ### Ý tưởng thuật toán
 
+Ta xét ví dụ với đồ thị có hướng sau (giả định các đường đi là một chiều, chỉ đi từ đỉnh có số thứ tự thấp hơn tới đỉnh có số thứ tự cao hơn, số có màu đỏ cạnh mỗi đỉnh là độ dài đường đi ngắn nhất từ gốc tới đỉnh đó, và đỉnh gốc là đỉnh 1).
 
+Khởi tạo:
+<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford1.png"></p>
+
+Thực hiện lần duyệt đầu tiên, ta cập nhật được đường đi ngắn nhất thông qua các cạnh (1, 2); (1, 3); (1, 4):
+
+<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford2.png"></p>
+
+Tương tự với lần duyệt thứ 2, cạnh (2, 5) và (3, 4) là các cạnh tối ưu:
+													    
+<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford3.png"></p>
+
+Với lần duyệt thứ 3, chỉ có cạnh (4, 5) cải tiến đường đi tối ưu:
+													    
+<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford4.png"></p>
+													    
+Tới lần duyệt thứ 4, ta thấy không còn cạnh nào có thể tối ưu hóa bất kỳ đường đi ngắn nhất nào nữa. Tới đây, ta hoàn toàn có thể dừng duyệt (vì chắc chắn việc không còn cạnh có thể tối ưu cũng đồng nghĩa với việc không có chu trình âm trong đồ thị).
 
 ### Cài đặt
 
@@ -113,9 +130,9 @@ int main() {
     	if(i == path.size() - 1){
     		printf("%d", v);
     		break;
-		} 
-    printf("%d -> ",path[i]);
-	}
+	} 
+   	printf("%d -> ",path[i]);
+    }
 }
 
 ```
@@ -147,5 +164,8 @@ int main() {
 2. [Brilliant.org](https://brilliant.org/wiki/bellman-ford-algorithm/#:~:text=The%20Bellman%2DFord%20algorithm%20is,other%20vertices%20in%20the%20graph.&text=Going%20around%20the%20negative%20cycle,the%20path%20length%20is%20increasing)
 3. Giải thuật và lập trình - Thầy Lê Minh Hoàng
 4. [cp-algorithms.com](https://cp-algorithms.com/graph/bellman_ford.html)
+5. [kc97ble](https://sites.google.com/site/kc97ble/algorithm-graph/fordbellmanqueue-cpp)
+6. Competitve Programming's Handbook 
+7. [thuytrangcoding.wordpress.com](https://thuytrangcoding.wordpress.com/2018/03/19/graph-shortestpath-bellmanford/)
 
 
