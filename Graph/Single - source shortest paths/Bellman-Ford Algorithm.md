@@ -157,9 +157,9 @@ Thuật toán gồm các bước sau:
 * Mỗi nút gửi bảng thông tin của mình cho tất cả các nút lân cận.
 * Khi một nút nhận được các bảng thông tin từ các nút lân cận, nó tính các tuyến đường ngắn nhất tới tất cả các nút khác và cập nhật bảng thông tin của chính mình.
 
-Nhược điểm chính của thuật toán Bellman-Ford trong cấu hình này là
+Nhược điểm chính của thuật toán Bellman-Ford trong cấu hình này là:
 
-* Không nhân rộng tốt
+* Không nhân rộng tốt.
 * Các thay đổi của tô-pô mạng không được ghi nhận nhanh do các cập nhật được lan truyền theo từng nút một.
 * Đếm dần đến vô cùng (nếu liên kết hỏng hoặc nút mạng hỏng làm cho một nút bị tách khỏi một tập các nút khác, các nút này vẫn sẽ tiếp tục ước tính khoảng cách tới nút đó và tăng dần giá trị tính được, trong khi đó còn có thể xảy ra việc định tuyến thành vòng tròn)
 
