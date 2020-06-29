@@ -147,6 +147,20 @@ int main() {
 
 ## Ứng dụng
 
+Một biến thể phân tán của thuật toán Bellman-Ford được dùng trong các giao thức định tuyến vector khoảng cách, chẳng hạn giao thức RIP (Routing Information Protocol). Đây là biến thể phân tán vì nó liên quan đến các nút mạng (các thiết bị định tuyến) trong một hệ thống tự chủ (autonomous system), ví dụ một tập các mạng IP thuộc sở hữu của một nhà cung cấp dịch vụ Internet (ISP).
+
+Thuật toán gồm các bước sau:
+
+* Mỗi nút tính khoảng cách giữa nó và tất cả các nút khác trong hệ thống tự chủ và lưu trữ thông tin này trong một bảng.
+* Mỗi nút gửi bảng thông tin của mình cho tất cả các nút lân cận.
+* Khi một nút nhận được các bảng thông tin từ các nút lân cận, nó tính các tuyến đường ngắn nhất tới tất cả các nút khác và cập nhật bảng thông tin của chính mình.
+
+Nhược điểm chính của thuật toán Bellman-Ford trong cấu hình này là
+
+* Không nhân rộng tốt
+* Các thay đổi của tô-pô mạng không được ghi nhận nhanh do các cập nhật được lan truyền theo từng nút một.
+* Đếm dần đến vô cùng (nếu liên kết hỏng hoặc nút mạng hỏng làm cho một nút bị tách khỏi một tập các nút khác, các nút này vẫn sẽ tiếp tục ước tính khoảng cách tới nút đó và tăng dần giá trị tính được, trong khi đó còn có thể xảy ra việc định tuyến thành vòng tròn)
+
 ## Let's practice
 
 1. https://codeforces.com/problemset/problem/601/A
