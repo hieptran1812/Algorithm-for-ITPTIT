@@ -48,7 +48,7 @@ Tiếp theo, ta duyệt tới K = 2.
 
 <p align = "center"><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-floyd4.png"></p>
 
-Cứ tiếp tục lựa chọn C như vậy cho tới hết, ta sẽ thu được mảng 2D hoàn chỉnh:
+Cứ tiếp tục lựa chọn K như vậy cho tới hết, ta sẽ thu được mảng 2D hoàn chỉnh:
 
 <p align = "center"><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-floyd5.png"></p>
 
@@ -106,6 +106,8 @@ int main() {
 Độ phức tạp thời gian O(|V|<sup>3</sup>)
 
 ## Ví dụ
+
+Xem code trên :D
 
 ## Ứng dụng
 
