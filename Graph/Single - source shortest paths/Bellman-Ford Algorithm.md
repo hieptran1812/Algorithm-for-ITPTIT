@@ -11,7 +11,7 @@ Thuật toán Bellman-Ford là thuật toán dùng để tìm đường đi ng�
 
 Cho đồ thị như sau:
 
-<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford1.png"></p>
+<p align = "center"><img src = "https://github.com/hieptran1812/Algorithm-for-ITPTIT/blob/master/image/bellman1.png"></p>
                                                                                                                    
 Tìm đường đi ngắn nhất giữa đỉnh 1 với các đỉnh còn lại trong đồ thị.                                                                                                             
 
@@ -20,19 +20,19 @@ Tìm đường đi ngắn nhất giữa đỉnh 1 với các đỉnh còn lại 
 Ta xét ví dụ với đồ thị có hướng sau (giả định các đường đi là một chiều, chỉ đi từ đỉnh có số thứ tự thấp hơn tới đỉnh có số thứ tự cao hơn, số có màu đỏ cạnh mỗi đỉnh là độ dài đường đi ngắn nhất từ gốc tới đỉnh đó, và đỉnh gốc là đỉnh 1).
 
 Khởi tạo:
-<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford1.png"></p>
+<p align = "center"><img src = "https://github.com/hieptran1812/Algorithm-for-ITPTIT/blob/master/image/bellman1.png"></p>
 
 Thực hiện lần duyệt đầu tiên, ta cập nhật được đường đi ngắn nhất thông qua các cạnh (1, 2); (1, 3); (1, 4):
 
-<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford2.png"></p>
+<p align = "center"><img src = "https://github.com/hieptran1812/Algorithm-for-ITPTIT/blob/master/image/bellman2.png"></p>
 
 Tương tự với lần duyệt thứ 2, cạnh (2, 5) và (3, 4) là các cạnh tối ưu:
 													    
-<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford3.png"></p>
+<p align = "center"><img src = "https://github.com/hieptran1812/Algorithm-for-ITPTIT/blob/master/image/bellman3.png"></p>
 
 Với lần duyệt thứ 3, chỉ có cạnh (4, 5) cải tiến đường đi tối ưu:
 													    
-<p align = "center><img src = "https://thuytrangcoding.files.wordpress.com/2018/03/cses-fi-bellmanford4.png"></p>
+<p align = "center"><img src = "https://github.com/hieptran1812/Algorithm-for-ITPTIT/blob/master/image/bellman4.png"></p>
 													    
 Tới lần duyệt thứ 4, ta thấy không còn cạnh nào có thể tối ưu hóa bất kỳ đường đi ngắn nhất nào nữa. Tới đây, ta hoàn toàn có thể dừng duyệt (vì chắc chắn việc không còn cạnh có thể tối ưu cũng đồng nghĩa với việc không có chu trình âm trong đồ thị).
 
@@ -144,6 +144,8 @@ int main() {
 * Độ phức tạp thời gian trong trường hợp xấu nhất: O(|E|.|V|)
 
 ## Ví dụ
+
+Xem code trên :D
 
 ## Ứng dụng
 
