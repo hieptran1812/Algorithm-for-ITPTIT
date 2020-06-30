@@ -89,13 +89,13 @@ int main() {
     for (int k = 1; k <= n; k++)
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
-                min(a[i][j], a[i][k] + a[k][j]);
+                a[i][j] = min(a[i][j], a[i][k] + a[k][j]);
 
     cout << "Ma tran khoang cach: \n";
     for (int i = 1; i <= n; i++){
         for (int j = 1; j <= n; j++){
         	cout << a[i][j] << " ";
-    	  }
+    	}
     	cout << endl;
     }
 }
