@@ -161,8 +161,8 @@ int main() {
     scanf("%d", &source);
     //printf("Nhap so dinh: ");
     scanf("%d", &n);
-    for(int i = 0; i < n; i++){
-    	for(int j = 0; j < n; j++){
+    for(int i = 1; i <= n; i++){
+    	for(int j = 1; j <= n; j++){
     		scanf("%d", &graph[i][j]);
     		if(graph[i][j] != 0 && graph[i][j] != INT_MAX){
     			a[i].push_back(ii(graph[i][j], j));
