@@ -123,6 +123,7 @@ using namespace std;
 const int oo = 9999999; // Đánh dấu là vô cực
 typedef pair<int, int> ii;
 int pre[1812];
+int graph[14][14];
 vector<int>path[1812]; //Lưu đường đi tới đỉnh i
 vector<ii> a[1812];
 int n, m;
@@ -155,16 +156,18 @@ void dijkstra(int source) {
 }
 
 int main() {
-    int p, q, w, source;
+     int p, q, w, source;
     //printf("Nhap dinh nguon: ");
     scanf("%d", &source);
-    //printf("Nhap so dinh va so canh: ");
-    scanf("%d%d", &n, &m);
-    while (m--) {
-        scanf("%d%d%d", &p, &q, &w);
-	// Đồ thị vô hướng
-        a[p].push_back(ii(w, q));
-        a[q].push_back(ii(w, p));
+    //printf("Nhap so dinh: ");
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++){
+    	for(int j = 0; j < n; j++){
+    		scanf("%d", &graph[i][j]);
+    		if(graph[i][j] != 0 && graph[i][j] != INT_MAX){
+    			a[i].push_back(ii(graph[i][j], j));
+    		}
+    	}
     }
     dijkstra(source);
     for (int i = 1; i <= n; i++){
@@ -174,9 +177,7 @@ int main() {
     		printf("khong co duong di tu nguon toi dinh nay \n");
     		continue;
 	}
-        printf("d( 1 -> %d ) = %d\n", i, d[i]);
-        int tmp = i;
-        path[i].push_back(i);
+        printf("d( %d -> %d ) = %d\n", source, i, d[i]);
 	for(int tmp = i; tmp != source; tmp = pre[tmp]){
 		path[i].push_back(tmp);
 	}
@@ -188,7 +189,7 @@ int main() {
 			printf("%d", path[i][j]);
 			break;
 		} 
-		printf("%d -> ", path[i][j]);
+		else printf("%d -> ", path[i][j]);
 	}
 	printf("\n");
     }
