@@ -111,16 +111,16 @@ int main() {
     		if(a[i][j] == oo){
     			cout << "Khong co duong di tu " << i << " toi " << j << endl;
     			continue;
-			}
+		}
     		if (i != j){
     			cout << "Duong " << i << " toi " << j <<": ";
     			for(int tmp = i; tmp != j; tmp = next1[tmp][j]){
     				cout << tmp << " ";
-				}
-				cout << j << endl;
 			}
+			cout << j << endl;
 		}
 	}
+    }
 }
 ```
 
