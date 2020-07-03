@@ -68,14 +68,14 @@ Coming soon!
 
 #include <bits/stdc++.h>
 using namespace std;
-const int oo = 9999999;
+const int oo = 99999;
 int a[1812][1812];
 int n, m;
 int next1[100][100];
 int graph[100][100];
 
 int main() {
-    cin >> n >> m;
+    cin >> n;
 //    for (int i = 1; i <= m; i++) { // Nhap theo danh sach canh
 //        int p, q, w;
 //        cin >> p >> q >> w;
@@ -94,7 +94,7 @@ int main() {
     for (int k = 1; k <= n; k++)
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++){
-            	if(a[i][j] >  a[i][k] + a[k][j]){
+            	if((a[i][j] >  a[i][k] + a[k][j]) && (a[i][k] != oo) && (a[k][j] != oo)){
             		a[i][j] = a[i][k] + a[k][j];
                 	next1[i][j] = next1[i][k];
             	}
@@ -108,6 +108,10 @@ int main() {
     }
     for(int i = 1; i <= n; i++){
     	for(int j = 1; j <= n; j++){
+    		if(a[i][j] == oo){
+    			cout << "Khong co duong di tu " << i << " toi " << j << endl;
+    			continue;
+			}
     		if (i != j){
     			cout << "Duong " << i << " toi " << j <<": ";
     			for(int tmp = i; tmp != j; tmp = next1[tmp][j]){
