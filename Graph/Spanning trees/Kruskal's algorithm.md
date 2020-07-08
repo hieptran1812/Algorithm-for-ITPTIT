@@ -74,7 +74,7 @@ main() {
 
 ## Độ phức tạp
 
-
+Độ phức tạp trung bình O(|E|log|E|)
 
 ## Ứng dụng
 
