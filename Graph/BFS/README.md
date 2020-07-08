@@ -10,58 +10,49 @@ Trong lý thuyết đồ thị, tìm kiếm theo chiều rộng (BFS) là một 
 
 ### Đặt vấn đề
 
-
+Tìm đường đi ngắn nhất từ đỉnh nguồn tới các đỉnh còn lại trên đồ thị không trọng số.
 
 ### Mô tả thuật toán
 
 <p align = "center"><img src = "https://he-s3.s3.amazonaws.com/media/uploads/0dbec9e.jpg" height = 1200></p>
 
-The traversing will start from the source node and push s in queue. s will be marked as 'visited'.
+Thuật toán bắt đầu bằng việc push đỉnh nguồn s vào hàng đợi và đánh dấu đỉnh s đã được duyệt.
 
-First iteration
+**Lần lặp 1**:
 
-s will be popped from the queue
-Neighbors of s i.e. 1 and 2 will be traversed
-1 and 2, which have not been traversed earlier, are traversed. They will be:
-Pushed in the queue
-1 and 2 will be marked as visited
-Second iteration
+* Đỉnh s được pop khỏi hàng đợi.
+* Bắt đầu duyệt tới hai đỉnh kề với đỉnh s là đỉnh 1 và 2.
+* Đỉnh 1 và 2 đã được duyệt qua. Hai đỉnh này sẽ được push vào hàng đợi và đánh dấu là đã được duyệt.
 
-1 is popped from the queue
-Neighbors of 1 i.e. s and 3 are traversed
-s is ignored because it is marked as 'visited'
-3, which has not been traversed earlier, is traversed. It is:
-Pushed in the queue
-Marked as visited
-Third iteration
+**Lần lặp 2**:
 
-2 is popped from the queue
-Neighbors of 2 i.e. s, 3, and 4 are traversed
-3 and s are ignored because they are marked as 'visited'
-4, which has not been traversed earlier, is traversed. It is:
-Pushed in the queue
-Marked as visited
-Fourth iteration
+* Đỉnh 1 được pop khỏi hàng đợi.
+* Đỉnh kề của 1 là 3 bắt đầu được duyệt. Không cần duyệt qua đỉnh s bởi vì s đã được đánh dấu rồi :D.
+* Đỉnh 3 đã được duyệt qua. Đỉnh này được push vào hàng đợi và đánh dấu là đã được duyệt.
 
-3 is popped from the queue
-Neighbors of 3 i.e. 1, 2, and 5 are traversed
-1 and 2 are ignored because they are marked as 'visited'
-5, which has not been traversed earlier, is traversed. It is:
-Pushed in the queue
-Marked as visited
-Fifth iteration
+**Lần lặp 3**:
 
-4 will be popped from the queue
-Neighbors of 4 i.e. 2 is traversed
-2 is ignored because it is already marked as 'visited'
-Sixth iteration
+* Đỉnh 2 được pop khỏi hàng đợi.
+* Đỉnh kề của 2 là 3 và 4 bắt đầu được duyệt. Nhưng không cần duyệt đỉnh 3 vì đỉnh 3 đã được đánh dấu là duyệt rồi.
+* Đỉnh 4 đã được duyệt qua. Đỉnh này sẽ được push vào hàng đợi và đánh dấu là đã được duyệt.
 
-5 is popped from the queue
-Neighbors of 5 i.e. 3 is traversed
-3 is ignored because it is already marked as 'visited'
-The queue is empty and it comes out of the loop. All the nodes have been traversed by using BFS.
+**Lần lặp 4**:
 
-If all the edges in a graph are of the same weight, then BFS can also be used to find the minimum distance between the nodes in a graph.
+* Đỉnh 3 được pop khỏi hàng đợi.
+* Đỉnh kề của 3 là 1, 2, 5 bắt đầu được duyệt. Đỉnh 1 và 2 được đánh dấu rồi thì bỏ qua.
+* Đỉnh 5 đã được duyệt qua. Đỉnh này sẽ được push vào hàng đợi và đánh dấu là đã được duyệt.
+
+**Lần lặp 5**:
+
+* Đỉnh 4 được pop khỏi hàng đợi.
+* Đỉnh kề đỉnh 4 là đỉnh 2 đã được duyệt nên bỏ qua.
+
+**Lần lặp 6**:
+
+* Đỉnh 5 được pop khỏi hàng đợi.
+* Đỉnh kề đỉnh 5 là đỉnh 3 đã được duyệt nên bỏ qua.
+
+Sau những lần lặp trên, hàng đợi rỗng, kết thúc vòng lặp và tất cả các đỉnh đã được duyệt.
 
 ### Chứng minh thuật toán
 
@@ -71,7 +62,7 @@ Coming soon!
 
 **Mã giả**:
 ```
-BFS (G, s)                   //G là đồ thị và s là đỉnh nguồn
+BFS (G, s)      //G là đồ thị và s là đỉnh nguồn
       Đặt Q là hàng đợi (Queue)
       Q.enqueue(s) // Thêm đỉnh s vào hàng đợi Q cho đến khi tất cả đỉnh kề của s được đánh dấu
 
@@ -89,7 +80,59 @@ BFS (G, s)                   //G là đồ thị và s là đỉnh nguồn
 
 **Code**:
 ```C++
+#include<bits/stdc++.h>
+using namespace std;
 
+bool visited[1812]; // Danh dau dinh da duyet
+int pre[1812]; // Luu dinh truoc
+vector<int>adj[1812]; // Luu dinh ke
+int n, s; // So dinh va dinh nguon
+int graph[1812][1812]; // Do thi
+int oo = 18121812; // Danh dau la vo cuc
+vector<int>path[1812];
+
+//Do thi khong trong so
+
+void BFS(int source){
+	queue<int>q;
+	memset(visited, false, sizeof visited);
+	q.push(source);
+	visited[source] = true;
+	while(!q.empty()){
+		int u = q.front(); q.pop();
+		for(int i = 0; i < adj[u].size(); i++){
+			if(!visited[adj[u][i]]){
+				q.push(adj[u][i]);
+				visited[adj[u][i]] = true;
+				pre[adj[u][i]] = u;
+			}
+		}
+	}	
+}
+main(){
+	cin >> n >> s;
+	memset(pre, oo, sizeof pre);
+	for(int i = 1; i <= n; i++){
+		for(int j = 1; j <= n; j++){
+			cin >> graph[i][j];
+			if(i != j && graph[i][j] != 0){ // tao danh sach ke, them vao neu hai dinh khong trung lap va co duong di giua i va j
+				adj[i].push_back(j); adj[j].push_back(i);
+			}
+		}
+	}
+	BFS(s);
+	for(int i = 1; i <= n; i++){
+		if(i != s){
+			for(int j = i; j != s; j = pre[j]) path[i].push_back(j);
+			path[i].push_back(s);
+			reverse(path[i].begin(), path[i].end());
+			cout << "Duong di tu " << s << " den " << i <<":\n";
+			for(int tmp = 0; tmp < path[i].size(); tmp++) cout << path[i][tmp] << " ";
+			cout << endl;
+		}
+		else cout << "Khong co duong di hoac trung dinh tu " << s << " toi " << i << endl;
+	}
+}
 ```
 
 ### Độ phức tạp
@@ -104,7 +147,7 @@ Nếu V và E là tập hợp các đỉnh và cung của đồ thị, thì th�
 
 ## Ví dụ
 
-
+Các bạn xem ví dụ trên nha :D
 
 ## Ứng dụng
 
