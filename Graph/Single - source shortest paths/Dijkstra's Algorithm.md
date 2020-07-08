@@ -19,7 +19,7 @@ Cho đồ thị như hình dưới:
 
 Hãy tìm đường đi ngắn nhất giữa đỉnh C và các đỉnh còn lại trong đồ thị.
 
-### Ý tưởng thuật toán
+### Mô tả thuật toán
 
 Tớ sẽ áp dụng thuật toán Dijsktra cho đồ thị trên, hãy nghiên cứu thật kĩ từng công đoạn một vì nếu chỉ bỏ qua một chi tiết nhỏ ta sẽ không thể hiểu thuật toán được:
 
@@ -230,5 +230,6 @@ Bạn có thể tìm hiểu cụ thể hơn về từng ứng dụng tại [đâ
 
 1. [Wikipedia](https://vi.wikipedia.org/wiki/Thu%E1%BA%ADt_to%C3%A1n_Dijkstra)
 2. Handbook Competitive Programming
+3. [www.codingame.com](https://www.codingame.com/playgrounds/1608/shortest-paths-with-dijkstras-algorithm/dijkstras-algorithm)
 
 
