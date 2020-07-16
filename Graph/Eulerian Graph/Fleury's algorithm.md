@@ -33,14 +33,119 @@ Coming soon!
 
 ### Code
 
-Thuật toán Fleury
-```C++
+**Thuật toán Fleury** tìm chu trình hoặc đường đi Euler
 
+```Mã giả
+findStartVert(graph)
+Input: The given graph.
+Output: Find the starting vertex to start algorithm.
+Begin
+   for all vertex i, in the graph, do
+      deg := 0
+      for all vertex j, which are adjacent with i, do
+         deg := deg + 1
+      done
+      if deg is odd, then
+         return i
+      done
+      when all degree is even return 0
+End
+isBridge(u, v)
+Input: The start and end node.
+Output: True when u and v are forming a bridge.
+Begin
+   deg := 0
+   for all vertex i which are adjacent with v, do
+      deg := deg + 1
+   done
+   if deg > 1, then
+      return false
+   return true
+End
+fleuryAlgorithm(start)
+Input: The starting vertex.
+Output: Display the Euler path or circuit.
+Begin
+   edge := get the number of edges in the graph //it will not initialize in next
+   recursion call
+   for all vertex v, which are adjacent with start, do
+      if edge <= 1 OR isBridge(start, v) is false, then
+         display path from start and v
+         remove edge (start,v) from the graph
+         decrease edge by 1
+         fleuryAlgorithm(v)
+   done
+End
+```
+
+```C++
+#include<iostream>
+#include<vector>
+#define NODE 5
+using namespace std;
+int graph[NODE][NODE] = {{0, 1, 1, 1, 1},
+   {1, 0, 1, 1, 0},
+   {1, 1, 0, 1, 0},
+   {1, 1, 1, 0, 1},
+   {1, 0, 0, 1, 0}
+};
+int tempGraph[NODE][NODE];
+
+int findStartVert(){
+   for(int i = 0; i<NODE; i++){
+      int deg = 0;
+      for(int j = 0; j<NODE; j++){
+         if(tempGraph[i][j]) deg++; //increase degree, when connected edge found
+      }
+      if(deg % 2 != 0) //when degree of vertices are odd
+      return i; //i is node with odd degree
+   }
+   return 0; //when all vertices have even degree, start from 0
+}
+
+bool isBridge(int u, int v){
+   int deg = 0;
+   for(int i = 0; i<NODE; i++)
+      if(tempGraph[v][i]) deg++;
+      if(deg>1) return false; //the edge is not forming bridge
+   return true; //edge forming a bridge
+}
+
+int edgeCount(){
+   int count = 0;
+   for(int i = 0; i<NODE; i++)
+      for(int j = i; j<NODE; j++)
+         if(tempGraph[i][j])
+            count++;
+   return count; //count nunber of edges in the graph
+}
+
+void fleuryAlgorithm(int start){
+   static int edge = edgeCount();
+   for(int v = 0; v<NODE; v++){
+      if(tempGraph[start][v]){ //when (u,v) edge is presnt and not forming bridge
+         if(edge <= 1 || !isBridge(start, v)){
+            cout << start << "--" << v << " ";
+            tempGraph[start][v] = tempGraph[v][start] = 0; //remove edge from graph
+            edge--; //reduce edge
+            fleuryAlgorithm(v);
+         }
+      }
+   }
+}
+
+int main(){
+   for(int i = 0; i<NODE; i++) //copy main graph to tempGraph
+    for(int j = 0; j<NODE; j++)
+      tempGraph[i][j] = graph[i][j];
+   cout << "Euler Path Or Circuit: ";
+   fleuryAlgorithm(findStartVert());
+}
 ```
 
 ### Độ phức tạp
 
-Độ phức tạp thời gian trung bình: O(|E|)
+Độ phức tạp thời gian trung bình: O(|E|<sup>2</sup>)
 
 ## Let's practice
 1.
@@ -53,3 +158,4 @@ Thuật toán Fleury
 8.
 
 ## Tham khảo
+1. [tutorialspoint.com](https://www.tutorialspoint.com/fleury-s-algorithm-for-printing-eulerian-path-or-circuit-in-cplusplus#:~:text=Fleury's%20Algorithm%20is%20used%20to,by%20removing%20the%20previous%20vertices.)
