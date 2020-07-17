@@ -35,6 +35,7 @@ Coming soon!
 
 **Thuật toán Fleury** tìm chu trình hoặc đường đi Euler
 
+**Mã giả**:
 ```Mã giả
 findStartVert(graph)
 Input: The given graph.
@@ -78,6 +79,7 @@ Begin
 End
 ```
 
+**Code C++**:
 ```C++
 #include<iostream>
 #include<vector>
