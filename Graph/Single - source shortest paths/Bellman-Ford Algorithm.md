@@ -4,7 +4,6 @@
 
 Thuật toán Bellman-Ford là thuật toán dùng để tìm đường đi ngắn nhất từ một đỉnh tới các đỉnh còn lại trong đồ thị có trọng số. Cùng một vấn đề nhưng thuật toán Bellman-Ford **chậm hơn** so với thuật toán Dijsktra nhưng lại **đa năng hơn** ở chỗ thuật toán có thể xử lý **trên đồ thị có cạnh mang trọng số âm**. Thuật toán được đề xuất lần đầu tiên bởi Alfonso Shimbel (1955), nhưng được đặt tên theo Richard Bellman và Lester Ford Jr. Hai người đã công bố thuật toán lần lượt vào năm 1958 và 1956. 
 
-
 ## Kĩ thuật
 
 ### Đặt vấn đề
@@ -15,7 +14,7 @@ Cho đồ thị như sau:
                                                                                                                    
 Tìm đường đi ngắn nhất giữa đỉnh 1 với các đỉnh còn lại trong đồ thị.                                                                                                             
 
-### Ý tưởng thuật toán
+### Mô tả thuật toán
 
 Ta xét ví dụ với đồ thị có hướng sau (giả định các đường đi là một chiều, chỉ đi từ đỉnh có số thứ tự thấp hơn tới đỉnh có số thứ tự cao hơn, số có màu đỏ cạnh mỗi đỉnh là độ dài đường đi ngắn nhất từ gốc tới đỉnh đó, và đỉnh gốc là đỉnh 1).
 
