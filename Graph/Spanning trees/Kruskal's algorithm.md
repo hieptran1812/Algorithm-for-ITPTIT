@@ -39,7 +39,7 @@ int anc(int p) { //Tim goc cua dinh
     if (par[p] == p)
         return p;
     else
-        return par[p] = anc(par[p]);
+        return par[p] = anc(par[p]); // Đệ quy
 }
 void join(int p, int q) { par[anc(p)] = anc(q); } // Hop hai goc dinh p và dinh q
 
