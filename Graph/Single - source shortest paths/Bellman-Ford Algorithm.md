@@ -86,14 +86,13 @@ int pre[181220];
 vector<int>path;
 
 void bellman(int u) {
-    queue<int> qu;
     //Buoc 1: Khoi tao
-    for (int i = 1; i <= n; i++)
-        d[i] = 99999999;
+    queue<int> qu;
+    for (int i = 1; i <= n; i++) d[i] = 99999999;
     d[u] = 0;
     qu.push(u); //push u vào queue
     inqueue[u] = true; //Đánh dấu đỉnh u đã trong queue
-	// Buoc 2: Lap
+    // Buoc 2: Lap
     while (qu.size()) {
         u = qu.front(); //Lấy giá trị đầu của queue
         inqueue[u] = false; //Đánh dấu là đỉnh u đã pop ra khỏi queue (hay không còn trong queue)
