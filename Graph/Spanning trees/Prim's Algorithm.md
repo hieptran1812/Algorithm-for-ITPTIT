@@ -108,6 +108,8 @@ int main() {
 
 ### Độ phức tạp
 
+Độ phức tạp theo cách cài trên: O(|V|<sup>2</sup>)
+
 ## Ví dụ
 
 ## Let's practice
