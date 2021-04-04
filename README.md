@@ -5,7 +5,7 @@
 Đã vào chuyên ngành Khoa học máy tính (Computer Science) thì hẳn các bạn không còn lạ gì với từ "Thuật toán" (Algorithm). Đối với không ít
 các bạn thì 
 
-Mọi ý kiến đóng góp xin gửi về email: hieptran22182000@gmail.com
+Mọi ý kiến đóng góp xin gửi về email: hieptran.jobs@gmail.com
 
 ## Giới thiệu
 
