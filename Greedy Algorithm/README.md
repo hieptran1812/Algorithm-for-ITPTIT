@@ -12,7 +12,7 @@ Trong nhiều vấn đề, một chiến lược tham lam thường không tạo
 Nói chung, các thuật toán tham lam có năm thành phần: 
 * Một bộ các phương án có thể áp dụng.
 * Hàm chọn, chọn phương án tốt nhất được thêm vào giải pháp.
-* Một hàm kiểm tra tính khả thi, được sử dụng để xác định xem một phương có nên được sử dụng để đóng góp cho một giải pháp không. 
+* Một hàm kiểm tra tính khả thi, được sử dụng để xác định xem một phương án có nên được sử dụng để đóng góp cho một giải pháp không. 
 * Hàm mục tiêu, cập nhật giá trị bài toán tạm thời khi sử dụng một phương án.
 * Một hàm giải pháp, sẽ cho biết khi nào chúng ta đã tìm ra một giải pháp hoàn chỉnh cho bài toán.
 
