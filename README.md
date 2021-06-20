@@ -36,3 +36,4 @@ Cuối cùng, Practice make perfect!!!
 ### Kiến thức toán học bổ sung
 1. Đại số tuyến tính
 2. Số học
+3. Hình học
