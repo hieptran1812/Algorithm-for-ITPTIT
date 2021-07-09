@@ -8,7 +8,7 @@ Sau thời gian học thuật toán tại đại học, mình thấy có vài v�
 - Các thuật toán thật sự quá trừu tượng, có cách nào diễn đạt dễ hiểu hơn không?
 - Làm sao để biết được khi nào áp dụng thuật toán nào?
 - Nhiều tài liệu quá, mà trình bày bằng tiếng Anh khó hiểu!!!
-- Học thuật toán để làm cái mẹ gì vậy? Sau có dùng đến đâu?
+- Học thuật toán để làm cái gì vậy? Sau có dùng đến đâu?
 - Lười
 
 Do đó repo này sẽ giúp bạn giải quyết 3 vấn đề đầu tiên, còn 2 vấn đề cuối bạn sẽ tự tìm câu trả lời nha :))
