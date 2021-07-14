@@ -15,6 +15,8 @@ Do đó repo này sẽ giúp bạn giải quyết 3 vấn đề đầu tiên, c�
 
 Cuối cùng, Practice make perfect!!!
 
+*Lưu ý: Tất cả các content đang trong quá trình xây dựng, mọi ý kiến đóng góp xin gửi về email: hieptran22182000@gmail.com
+
 ## Các kiến thức trình bày
 
 ### Thuật toán
